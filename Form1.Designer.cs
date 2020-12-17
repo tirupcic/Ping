@@ -32,11 +32,12 @@
             this.adressTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pingInterval_UpDown = new System.Windows.Forms.DomainUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.intervalValue = new System.Windows.Forms.Label();
             this.pingIntervalabel = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // StartPingButton
@@ -75,15 +76,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Time interval";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // pingInterval_UpDown
-            // 
-            this.pingInterval_UpDown.Location = new System.Drawing.Point(128, 72);
-            this.pingInterval_UpDown.Name = "pingInterval_UpDown";
-            this.pingInterval_UpDown.Size = new System.Drawing.Size(217, 22);
-            this.pingInterval_UpDown.TabIndex = 4;
-            this.pingInterval_UpDown.Text = "Ping interval";
-            this.pingInterval_UpDown.SelectedItemChanged += new System.EventHandler(this.pingInterval_UpDown_SelectedItemChanged);
             // 
             // label3
             // 
@@ -126,22 +118,31 @@
             this.pingIntervalabel.Text = "Ping interval";
             this.pingIntervalabel.Click += new System.EventHandler(this.pingIntervalabel_Click);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(128, 72);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(107, 22);
+            this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.pingIntervalabel);
             this.Controls.Add(this.intervalValue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.pingInterval_UpDown);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.adressTextBox);
             this.Controls.Add(this.StartPingButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Ping ";
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,11 +154,11 @@
         private System.Windows.Forms.TextBox adressTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DomainUpDown pingInterval_UpDown;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label intervalValue;
         private System.Windows.Forms.Label pingIntervalabel;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
