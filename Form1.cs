@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,14 @@ namespace PingProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int count = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+            Ping ping = new Ping();
+            if (!adressTextBox.Text.Equals(""))
+            {
+                PingReply rep = ping.Send(adressTextBox.Text, count);
+                pingIntervalabel.Text = rep.Status.ToString();
+
+            }
 
         }
 

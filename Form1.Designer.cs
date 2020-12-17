@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.intervalValue = new System.Windows.Forms.Label();
             this.pingIntervalabel = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -98,32 +97,37 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Time interval";
             // 
-            // intervalValue
-            // 
-            this.intervalValue.AutoSize = true;
-            this.intervalValue.Location = new System.Drawing.Point(12, 261);
-            this.intervalValue.Name = "intervalValue";
-            this.intervalValue.Size = new System.Drawing.Size(124, 17);
-            this.intervalValue.TabIndex = 7;
-            this.intervalValue.Text = "Ping interval value";
-            this.intervalValue.Click += new System.EventHandler(this.label5_Click);
-            // 
             // pingIntervalabel
             // 
             this.pingIntervalabel.AutoSize = true;
-            this.pingIntervalabel.Location = new System.Drawing.Point(149, 217);
+            this.pingIntervalabel.Location = new System.Drawing.Point(61, 203);
             this.pingIntervalabel.Name = "pingIntervalabel";
-            this.pingIntervalabel.Size = new System.Drawing.Size(86, 17);
+            this.pingIntervalabel.Size = new System.Drawing.Size(124, 17);
             this.pingIntervalabel.TabIndex = 8;
-            this.pingIntervalabel.Text = "Ping interval";
+            this.pingIntervalabel.Text = "Ping interval value";
             this.pingIntervalabel.Click += new System.EventHandler(this.pingIntervalabel_Click);
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(128, 72);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(107, 22);
             this.numericUpDown1.TabIndex = 9;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // Form1
@@ -133,7 +137,6 @@
             this.ClientSize = new System.Drawing.Size(800, 440);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.pingIntervalabel);
-            this.Controls.Add(this.intervalValue);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -156,7 +159,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label intervalValue;
         private System.Windows.Forms.Label pingIntervalabel;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
