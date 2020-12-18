@@ -18,6 +18,7 @@ namespace PingProject
         public Form1()
         {
             InitializeComponent();
+           
         }
         bool buttonStop = false;
         int timer = 0;
@@ -27,7 +28,7 @@ namespace PingProject
             if (!adressTextBox.Text.Equals(""))
             {
                 buttonStop = true;
-               
+                listView1.Items.Add(adressTextBox.Text);
             }
             else
             {
@@ -37,6 +38,7 @@ namespace PingProject
         private void stopButton_Click(object sender, EventArgs e)
         {
             buttonStop = false;
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -71,8 +73,21 @@ namespace PingProject
                 roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
                 optionsTtlLabel.Text = rep.Options.Ttl.ToString();
                 dontFragmentLabel.Text = rep.Options.DontFragment.ToString();
+                bool isInListView = false;
 
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    if (item.Text.Equals(adressTextBox.Text))
+                    {
+                        isInListView = true;
+                    }
 
+                }
+                if (!isInListView)
+                {
+                    listView1.Items.Add(adressTextBox.Text);
+
+                }
             }
             catch (Exception exception)
             {
@@ -124,9 +139,11 @@ namespace PingProject
         {
 
         }
-     
-       
-    }
 
-  
-}
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+    }

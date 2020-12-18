@@ -19,7 +19,7 @@
             }
             base.Dispose(disposing);
         }
-
+         
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -47,6 +47,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,20 +101,20 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // label6
+            // optionsTtlLabel
             // 
             this.optionsTtlLabel.AutoSize = true;
             this.optionsTtlLabel.Location = new System.Drawing.Point(253, 292);
-            this.optionsTtlLabel.Name = "label6";
-            this.optionsTtlLabel.Size = new System.Drawing.Size(0, 21);
+            this.optionsTtlLabel.Name = "optionsTtlLabel";
+            this.optionsTtlLabel.Size = new System.Drawing.Size(0, 17);
             this.optionsTtlLabel.TabIndex = 13;
             // 
-            // label7
+            // dontFragmentLabel
             // 
             this.dontFragmentLabel.AutoSize = true;
             this.dontFragmentLabel.Location = new System.Drawing.Point(253, 338);
-            this.dontFragmentLabel.Name = "label7";
-            this.dontFragmentLabel.Size = new System.Drawing.Size(0, 21);
+            this.dontFragmentLabel.Name = "dontFragmentLabel";
+            this.dontFragmentLabel.Size = new System.Drawing.Size(0, 17);
             this.dontFragmentLabel.TabIndex = 14;
             // 
             // StartPingButton
@@ -137,12 +138,12 @@
             this.label3.Text = "Interval value";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label5
+            // roundTripTimeLabel
             // 
             this.roundTripTimeLabel.AutoSize = true;
             this.roundTripTimeLabel.Location = new System.Drawing.Point(253, 206);
-            this.roundTripTimeLabel.Name = "label5";
-            this.roundTripTimeLabel.Size = new System.Drawing.Size(0, 21);
+            this.roundTripTimeLabel.Name = "roundTripTimeLabel";
+            this.roundTripTimeLabel.Size = new System.Drawing.Size(0, 17);
             this.roundTripTimeLabel.TabIndex = 12;
             // 
             // stopButton
@@ -160,7 +161,7 @@
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Location = new System.Drawing.Point(253, 250);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(0, 21);
+            this.AddressLabel.Size = new System.Drawing.Size(0, 17);
             this.AddressLabel.TabIndex = 11;
             // 
             // label4
@@ -225,11 +226,25 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // listView1
+            // 
+            this.listView1.AllowColumnReorder = true;
+            this.listView1.AutoArrange = false;
+            this.listView1.FullRowSelect = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(436, 104);
+            this.listView1.Name = "listView1";
+            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.listView1.Size = new System.Drawing.Size(220, 316);
+            this.listView1.TabIndex = 20;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -275,6 +290,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
