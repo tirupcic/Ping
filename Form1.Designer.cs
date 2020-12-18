@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.adressTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.optionsTtlLabel = new System.Windows.Forms.Label();
+            this.dontFragmentLabel = new System.Windows.Forms.Label();
             this.StartPingButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.roundTripTimeLabel = new System.Windows.Forms.Label();
             this.stopButton = new System.Windows.Forms.Button();
             this.AddressLabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,21 +102,19 @@
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(253, 292);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 17);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Time to live";
+            this.optionsTtlLabel.AutoSize = true;
+            this.optionsTtlLabel.Location = new System.Drawing.Point(253, 292);
+            this.optionsTtlLabel.Name = "label6";
+            this.optionsTtlLabel.Size = new System.Drawing.Size(0, 21);
+            this.optionsTtlLabel.TabIndex = 13;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(253, 338);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Don\'t fragment";
+            this.dontFragmentLabel.AutoSize = true;
+            this.dontFragmentLabel.Location = new System.Drawing.Point(253, 338);
+            this.dontFragmentLabel.Name = "label7";
+            this.dontFragmentLabel.Size = new System.Drawing.Size(0, 21);
+            this.dontFragmentLabel.TabIndex = 14;
             // 
             // StartPingButton
             // 
@@ -139,12 +139,11 @@
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(253, 206);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 17);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "RoundTrip time";
+            this.roundTripTimeLabel.AutoSize = true;
+            this.roundTripTimeLabel.Location = new System.Drawing.Point(253, 206);
+            this.roundTripTimeLabel.Name = "label5";
+            this.roundTripTimeLabel.Size = new System.Drawing.Size(0, 21);
+            this.roundTripTimeLabel.TabIndex = 12;
             // 
             // stopButton
             // 
@@ -161,9 +160,8 @@
             this.AddressLabel.AutoSize = true;
             this.AddressLabel.Location = new System.Drawing.Point(253, 250);
             this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(60, 17);
+            this.AddressLabel.Size = new System.Drawing.Size(0, 21);
             this.AddressLabel.TabIndex = 11;
-            this.AddressLabel.Text = "Address";
             // 
             // label4
             // 
@@ -221,6 +219,12 @@
             this.label12.Text = "Seconds";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -231,9 +235,9 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dontFragmentLabel);
+            this.Controls.Add(this.optionsTtlLabel);
+            this.Controls.Add(this.roundTripTimeLabel);
             this.Controls.Add(this.AddressLabel);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.numericUpDown1);
@@ -257,11 +261,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label optionsTtlLabel;
+        private System.Windows.Forms.Label dontFragmentLabel;
         private System.Windows.Forms.Button StartPingButton;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label roundTripTimeLabel;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Label AddressLabel;
         private System.Windows.Forms.Label label4;
@@ -270,6 +274,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

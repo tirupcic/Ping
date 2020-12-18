@@ -9,6 +9,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace PingProject
 {
@@ -18,38 +19,65 @@ namespace PingProject
         {
             InitializeComponent();
         }
-
+        bool buttonStop = false;
+        int timer = 0;
+        int count = 1;
         private void button1_Click(object sender, EventArgs e)
         {
-            int count = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
+            if (!adressTextBox.Text.Equals(""))
+            {
+                buttonStop = true;
+               
+            }
+            else
+            {
+                MessageBox.Show("Address cannot be empty");
+            }
+        }
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            buttonStop = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (buttonStop)
+            {
+                timer++;
+                label12.Text = "" + timer.ToString();
+                if (timer % count == 0)
+                {
+                    startPinging();
+                }
+
+            }
+            else
+            {
+                timer = 0;
+            }
+
+
+        }
+
+        public void startPinging()
+        {
+            count = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
             Ping ping = new Ping();
             try
             {
-                if (!adressTextBox.Text.Equals(""))
-                {
-                  
-                        PingReply rep = ping.Send(adressTextBox.Text, count * 10000);
-                        AddressLabel.Text = rep.Address.ToString();
-                        label5.Text = rep.RoundtripTime.ToString();
-                        label6.Text = rep.Options.Ttl.ToString();
-                        label7.Text = rep.Options.DontFragment.ToString();
 
-                   
+                PingReply rep = ping.Send(adressTextBox.Text, count * 10000);
+                AddressLabel.Text = rep.Address.ToString();
+                roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
+                optionsTtlLabel.Text = rep.Options.Ttl.ToString();
+                dontFragmentLabel.Text = rep.Options.DontFragment.ToString();
 
-                }
-                else
-                {
-                    MessageBox.Show("Address cannot be empty");
-                }
+
             }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
-        }
-        private void stopButton_Click(object sender, EventArgs e)
-        { 
-
         }
         private void label2_Click(object sender, EventArgs e)
         {
@@ -96,7 +124,9 @@ namespace PingProject
         {
 
         }
+     
+       
     }
 
-
+  
 }
