@@ -69,10 +69,14 @@ namespace PingProject
             {
 
                 PingReply rep = ping.Send(adressTextBox.Text, count * 10000);
+                if (rep.Status == IPStatus.Success)
+                {
+               
+                
                 AddressLabel.Text = rep.Address.ToString();
                 roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
                 optionsTtlLabel.Text = rep.Options.Ttl.ToString();
-                dontFragmentLabel.Text = rep.Options.DontFragment.ToString();
+                statusLabel.Text = rep.Status.ToString();
                 bool isInListView = false;
 
                 foreach (ListViewItem item in listView1.Items)
@@ -88,7 +92,11 @@ namespace PingProject
                     listView1.Items.Add(adressTextBox.Text);
 
                 }
-            }
+                }  else
+                    {
+                    statusLabel.Text = rep.Status.ToString();
+                }
+                }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
@@ -142,6 +150,11 @@ namespace PingProject
 
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click_1(object sender, EventArgs e)
         {
 
         }

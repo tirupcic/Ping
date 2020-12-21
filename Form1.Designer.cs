@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.optionsTtlLabel = new System.Windows.Forms.Label();
-            this.dontFragmentLabel = new System.Windows.Forms.Label();
             this.StartPingButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.roundTripTimeLabel = new System.Windows.Forms.Label();
@@ -44,10 +43,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,14 +108,6 @@
             this.optionsTtlLabel.Name = "optionsTtlLabel";
             this.optionsTtlLabel.Size = new System.Drawing.Size(0, 17);
             this.optionsTtlLabel.TabIndex = 13;
-            // 
-            // dontFragmentLabel
-            // 
-            this.dontFragmentLabel.AutoSize = true;
-            this.dontFragmentLabel.Location = new System.Drawing.Point(253, 338);
-            this.dontFragmentLabel.Name = "dontFragmentLabel";
-            this.dontFragmentLabel.Size = new System.Drawing.Size(0, 17);
-            this.dontFragmentLabel.TabIndex = 14;
             // 
             // StartPingButton
             // 
@@ -201,15 +193,6 @@
             this.label10.TabIndex = 17;
             this.label10.Text = "Time to live";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(16, 338);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(101, 17);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Don\'t fragment";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -239,18 +222,36 @@
             this.listView1.TabIndex = 20;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(12, 329);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(48, 17);
+            this.labelStatus.TabIndex = 21;
+            this.labelStatus.Text = "Status";
+            this.labelStatus.Click += new System.EventHandler(this.label5_Click_1);
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(253, 329);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 17);
+            this.statusLabel.TabIndex = 22;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dontFragmentLabel);
             this.Controls.Add(this.optionsTtlLabel);
             this.Controls.Add(this.roundTripTimeLabel);
             this.Controls.Add(this.AddressLabel);
@@ -277,7 +278,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label optionsTtlLabel;
-        private System.Windows.Forms.Label dontFragmentLabel;
         private System.Windows.Forms.Button StartPingButton;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label roundTripTimeLabel;
@@ -287,10 +287,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.Label statusLabel;
     }
 }
 
