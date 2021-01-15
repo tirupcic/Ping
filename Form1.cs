@@ -18,7 +18,7 @@ namespace PingProject
         public Form1()
         {
             InitializeComponent();
-           
+
         }
         bool buttonStop = false;
         int timer = 0;
@@ -28,7 +28,6 @@ namespace PingProject
             if (!adressTextBox.Text.Equals(""))
             {
                 buttonStop = true;
-                listView1.Items.Add(adressTextBox.Text);
             }
             else
             {
@@ -38,7 +37,7 @@ namespace PingProject
         private void stopButton_Click(object sender, EventArgs e)
         {
             buttonStop = false;
-            
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -71,92 +70,22 @@ namespace PingProject
                 PingReply rep = ping.Send(adressTextBox.Text, count * 10000);
                 if (rep.Status == IPStatus.Success)
                 {
-               
-                
-                AddressLabel.Text = rep.Address.ToString();
-                roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
-                optionsTtlLabel.Text = rep.Options.Ttl.ToString();
-                statusLabel.Text = rep.Status.ToString();
-                bool isInListView = false;
 
-                foreach (ListViewItem item in listView1.Items)
-                {
-                    if (item.Text.Equals(adressTextBox.Text))
-                    {
-                        isInListView = true;
-                    }
 
-                }
-                if (!isInListView)
-                {
-                    listView1.Items.Add(adressTextBox.Text);
+                    AddressLabel.Text = rep.Address.ToString();
+                    roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
+                    optionsTtlLabel.Text = rep.Options.Ttl.ToString();
+                    statusLabel.Text = rep.Status.ToString();
+                    bool isInListView = false;
 
-                }
-                }  else
-                    {
                     statusLabel.Text = rep.Status.ToString();
                 }
-                }
+            }
             catch (Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adressTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pingInterval_UpDown_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pingIntervalabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-
-        }
+     
     }
-    }
+}

@@ -45,9 +45,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
             this.labelStatus = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +60,6 @@
             this.adressTextBox.Name = "adressTextBox";
             this.adressTextBox.Size = new System.Drawing.Size(217, 22);
             this.adressTextBox.TabIndex = 1;
-            this.adressTextBox.TextChanged += new System.EventHandler(this.adressTextBox_TextChanged);
             // 
             // label1
             // 
@@ -76,7 +78,6 @@
             this.label2.Size = new System.Drawing.Size(89, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Time interval";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numericUpDown1
             // 
@@ -99,7 +100,6 @@
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // optionsTtlLabel
             // 
@@ -128,7 +128,6 @@
             this.label3.Size = new System.Drawing.Size(3, 3);
             this.label3.TabIndex = 5;
             this.label3.Text = "Interval value";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // roundTripTimeLabel
             // 
@@ -196,31 +195,17 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(241, 72);
+            this.label12.Location = new System.Drawing.Point(346, 67);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 17);
+            this.label12.Size = new System.Drawing.Size(16, 17);
             this.label12.TabIndex = 19;
-            this.label12.Text = "Seconds";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.Text = "0";
             // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // listView1
-            // 
-            this.listView1.AllowColumnReorder = true;
-            this.listView1.AutoArrange = false;
-            this.listView1.FullRowSelect = true;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(436, 104);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView1.Size = new System.Drawing.Size(220, 316);
-            this.listView1.TabIndex = 20;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // labelStatus
             // 
@@ -230,7 +215,6 @@
             this.labelStatus.Size = new System.Drawing.Size(48, 17);
             this.labelStatus.TabIndex = 21;
             this.labelStatus.Text = "Status";
-            this.labelStatus.Click += new System.EventHandler(this.label5_Click_1);
             // 
             // statusLabel
             // 
@@ -240,14 +224,53 @@
             this.statusLabel.Size = new System.Drawing.Size(0, 17);
             this.statusLabel.TabIndex = 22;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(298, 208);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(26, 17);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "ms";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(298, 292);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 17);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "s";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(301, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 17);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Time";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(395, 67);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(15, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "s";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.labelStatus);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -265,7 +288,6 @@
             this.Controls.Add(this.StartPingButton);
             this.Name = "Form1";
             this.Text = "Ping ";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -289,9 +311,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
     }
 }
 
