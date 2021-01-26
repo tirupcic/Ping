@@ -28,6 +28,20 @@ namespace PingProject
             if (!adressTextBox.Text.Equals(""))
             {
                 buttonStop = true;
+                Boolean isInList = false;
+                
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    if (item.Text.ToString().Equals(adressTextBox.Text.ToString()))
+                    {
+                        isInList = true;
+                    }
+                }
+                if (!isInList)
+                {
+                    listView1.Items.Add(adressTextBox.Text.ToString());
+                }
+
             }
             else
             {
@@ -37,6 +51,7 @@ namespace PingProject
         private void stopButton_Click(object sender, EventArgs e)
         {
             buttonStop = false;
+            adressTextBox.Enabled = true;
 
         }
 
@@ -44,6 +59,7 @@ namespace PingProject
         {
             if (buttonStop)
             {
+                adressTextBox.Enabled = false;
                 timer++;
                 label12.Text = "" + timer.ToString();
                 if (timer % count == 0)
@@ -70,7 +86,7 @@ namespace PingProject
                 PingReply rep = ping.Send(adressTextBox.Text, count * 10000);
                 if (rep.Status == IPStatus.Success)
                 {
-
+                 
 
                     AddressLabel.Text = rep.Address.ToString();
                     roundTripTimeLabel.Text = rep.RoundtripTime.ToString();
@@ -86,6 +102,6 @@ namespace PingProject
                 MessageBox.Show(exception.ToString());
             }
         }
-     
+      
     }
 }

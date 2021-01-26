@@ -51,6 +51,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,15 +75,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Location = new System.Drawing.Point(9, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.Size = new System.Drawing.Size(161, 17);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Time interval";
+            this.label2.Text = "Time interval in seconds";
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(128, 67);
+            this.numericUpDown1.Location = new System.Drawing.Point(176, 65);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -238,9 +240,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(298, 292);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 17);
+            this.label6.Size = new System.Drawing.Size(26, 17);
             this.label6.TabIndex = 24;
-            this.label6.Text = "s";
+            this.label6.Text = "ms";
             // 
             // label7
             // 
@@ -260,11 +262,32 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "s";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(398, 147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(148, 17);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "List of pinged address";
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(398, 167);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(192, 239);
+            this.listView1.TabIndex = 28;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 440);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -317,6 +340,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
