@@ -265,7 +265,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(398, 147);
+            this.label13.Location = new System.Drawing.Point(549, 140);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(148, 17);
             this.label13.TabIndex = 27;
@@ -274,7 +274,7 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(398, 167);
+            this.listView1.Location = new System.Drawing.Point(552, 163);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(192, 239);
             this.listView1.TabIndex = 28;

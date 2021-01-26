@@ -99,6 +99,9 @@ namespace PingProject
             }
             catch (Exception exception)
             {
+                buttonStop = false;
+                adressTextBox.Enabled = true;
+                statusLabel.Text = IPStatus.DestinationNetworkUnreachable.ToString();
                 MessageBox.Show(exception.ToString());
             }
         }
